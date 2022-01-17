@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Ticket Concert</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="static/search.css">
+<body>
+    <style>
+        body{
+          background-color : #222;
+        }
+        h1 {
+          text-align: center;
+          font-family: Bahnschrift;
+          font-weight:bold;
+          color: #fff;
+          font-size: 600px;
+          padding-top: 100px;
+          }
+    </style>
+
+     <!--Navbar ข้างบน-->
+     <div class="w3-top">
+        <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+        <div class="w3-bar w3-wide w3-padding">
+            <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>
+
+            <div class="w3-right w3-hide-small">
+                <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                <a href="search" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Search</a>
+                <a href="contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="font-size:70px;">Check Booking</h1>  
+    
+    <!--search ข้อมูลผู้ใช้-->
+    <section>
+        <div class="container">
+            <div class="form-box">
+                <!--ส่งข้อมูลไปหลังบ้าน พอยืนยันเเล้วจะขึ้นหน้า sucess จะมีปุ่มลิ้งเข้าหน้า payment -->
+                <form id="form" class="form" action='search_user' method='post'>
+                    <!-- action='sitzonesucess.html' -->
+                    {% csrf_token %}
+                    <!--<h2 style="font: size 50px;">Find my booking ticket</h2>-->
+                    <!--เลือก Zone นั่ง-->
+                    <div class="form-control">
+                        <label for="zone">Zone</label>
+                        <select class="form-select" id="zone" name="zone">
+                            <!--<option selected>Zone</option>-->
+                            <option value="A">Zone A (sit)</option>
+                            <option value="B">Zone B (sit)</option>
+                            <option value="C">Zone C (sit)</option>
+                            <option value="standA">Zone A (stand)</option>
+                            <option value="standB">Zone B (stand)</option>
+                            <option value="standC">Zone C (stand)</option>
+
+                        </select>
+                    </div>
+
+                    <!--กรอกชื่อ-นามสกุล-->
+                    <div class="form-control">
+                        <label for="full_name">Full name</label>
+                        <input type="text" id="full_name" class="form-control" placeholder="" name='full_name'
+                               aria-label="full_name" aria-describedby="basic-addon1">
+                        <small>error message</small>
+                    </div>
+
+                    <h5> * upper case NOT equal lower case * </h5>
+
+                    <!--Submit-->
+                    <button type="submit">Search</button>
+
+
+                </form>
+            </div>
+           
+        </div> 
+        
+    </section>
+    
+</body>
+</html>

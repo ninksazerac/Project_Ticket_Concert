@@ -1,0 +1,225 @@
+.w3-top {
+    background: rgba(0,0,0,0.7);
+    font-family: Bahnschrift;
+    font-size: 20px;
+    
+}
+.w3-top b{
+    font-size: 21px;
+}
+body {
+    font-family: Bahnschrift;
+    background-color: #222;
+}
+
+section {
+    position: relative;
+    top: 70px;
+}
+
+.form-box h2 {
+    font-family: Bahnschrift;
+}
+
+.form-box h5 {
+    font-family: Bahnschrift;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 0 26px;
+    font-weight: bold;
+    font-family: Bahnschrift;
+    color: aliceblue;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 0 26px;
+    font-weight: bold;
+    font-family: Bahnschrift;
+}
+
+h5 {
+    text-align: center;
+    font-family: Bahnschrift;
+    color: red;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.input-field input,
+.input-field textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 18px;
+        border: 1px solid rgba(128, 128, 128, 0.199);
+        margin-top: 5px;
+    }
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    font-family: Bahnschrift;
+    color: white;
+    background-color: #22A7D3;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+}
+
+input[type="submit"]:hover {
+    background-color: #222;
+}
+
+
+
+#status {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+    #status.success {
+        background-color: rgb(211, 250, 153);
+        animation: status 4s ease forwards;
+    }
+
+    #status.error {
+        background-color: rgb(250, 129, 92);
+        color: white;
+        animation: status 4s ease forwards;
+    }
+
+@keyframes status {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    90% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.input {
+    position:relative;
+    left:210px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: darkturquoise;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 18px;
+  width: 1105px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.input span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.input span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.input:hover span {
+  padding-right: 25px;
+}
+
+.input:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ /*zone*/
+.input-field .form-select {
+    border: 1px solid rgb(128, 128, 128, 0.199);
+    border-radius: 3px;
+    display: block;
+    width: 20%;
+    padding: 5px;
+    font-size: 21px;
+}
+
+/*error*/
+.form-box .fa {
+    position: absolute;
+    right: 400px;
+    margin-top: 15px;
+}
+
+.form-box .input-field.error input {
+    border-color: #f00;
+    border-width: 2px;
+}
+
+.form-box .input-field.error .fa {
+    color: #f00;
+}
+
+.form-box .input-field.success input {
+    border-color: #0b0;
+    border-width: 2px;
+}
+
+.form-box .input-field.success .fa {
+    color: #0b0;
+}
+
+.input-field span {
+    display: none;
+}
+
+.input-field.error span {
+    color: #f00;
+    display: block
+}
+
+.input-field.success span {
+    color: #0b0;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Concert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="static/standzone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    
+</head>
+<style>
+    body{
+      background-color : #222;
+    }
+    h1 {
+      text-align: center;
+      font-family: Bahnschrift;
+      font-weight:bold;
+      color: #fff;
+      font-size: 600px;
+      padding-top: 100px;
+      }
+</style>
+<body>
+   
+    <!--Navbar ข้างบน-->
+        <div class="w3-top">
+            <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+            <div class="w3-bar w3-wide w3-padding">
+                <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>
+
+                <div class="w3-right w3-hide-small">
+                    <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                    <a href="search" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Search</a>
+                    <a href="contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+
+       
+         <h1 style="font-size:70px;">Standing Zone</h1>  
+        <!--<img src="image/sitstage.png" alt="" width="1222px" height="671px">--> 
+        
+        
+         <section>
+             <div class="container">
+                 <div class="form-box">
+                     <!--ส่งข้อมูลไปหลังบ้าน พอยืนยันเเล้วจะขึ้นหน้า sucess จะมีปุ่มลิ้งเข้าหน้า payment -->
+                     <form id="form" class="form" action='addreserve' method='post'>
+
+                         <h2 style="font: size 50px;">Buy Ticket</h2>
+
+                         <!--เลือก Zone นั่ง-->
+                         <div class="form-control">
+                             <label for="zone">Zone</label>
+                             <select class="form-select" id="zone" name="zone">
+                                 <!--<option selected>Zone</option>-->
+                                 <option value="standA">Zone A</option>
+                                 <option value="standB">Zone B</option>
+                                 <option value="standC">Zone C</option>
+                             </select>
+                         </div>
+                        
+                         <!--กรอกชื่อ-นามสกุล-->
+                         <div class="form-control">
+                             <label for="full_name">Full name</label>
+                             <input type="text" id="full_name" class="form-control" placeholder="" name='full_name'
+                                    aria-label="Full_name" aria-describedby="basic-addon1">
+                             <small>error message</small>
+                         </div>
+
+                         <!--Submit-->
+                         <button type="submit">Payment</button>
+
+
+                     </form>
+                 </div>
+
+             </div>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+         </section>
+    <script src="static/standzone.js"></script>
+</body>
+</html>

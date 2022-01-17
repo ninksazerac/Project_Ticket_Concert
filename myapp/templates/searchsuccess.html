@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Ticket Concert</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="static/success.css">
+<body>
+    <!--Navbar ข้างบน-->
+
+    <div class="w3-top">
+        <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+        <div class="w3-bar w3-wide w3-padding">
+            <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                <a href="search" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Search</a>
+                <a href="contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+            </div>
+        </div>
+    </div>
+    <!--Navbar ข้างบน-->
+
+    <p></p>
+    <section>
+        <div class="container">
+            <div class="form-box">
+                <!--ส่งข้อมูลไปหลังบ้าน พอยืนยันเเล้วจะขึ้นหน้า sucess จะมีปุ่มลิ้งเข้าหน้า payment -->
+                <br id="form" class="form"> <!-- action='sitzonesucess.html' -->
+                <h2 style="font: size 50px;">Search Booking</h2>
+                <h3>Zone</h3>
+                {{zone}}
+                <br>
+                <h3>number</h3>
+                {{number}}
+                <br>
+                <h3>Full Name</h3>
+                {{name}}
+
+
+                <br>
+                <!--Submit-->
+                <br>
+                <a href="home" button class="button" style="vertical-align:middle"><span>Back to home</span></a>
+
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Concert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="static/sitzone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+   
+</head>
+<style>
+    body{
+      background-color : #222;
+    }
+    h1 {
+      text-align: center;
+      font-family: Bahnschrift;
+      font-weight:bold;
+      color: #fff;
+      font-size: 600px;
+      padding-top: 100px;
+      }
+</style>
+<body>
+    {% csrf_token %}
+    <!--Navbar ข้างบน-->
+        <div class="w3-top">
+            <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+            <div class="w3-bar w3-wide w3-padding">
+                <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>
+
+                <div class="w3-right w3-hide-small">
+                    <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                    <a href="search" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Search</a>
+                    <a href="contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+
+       
+         <h1 style="font-size:70px;">Siting Zone</h1>  
+        <!--<img src="image/sitstage.png" alt="" width="1222px" height="671px">--> 
+        
+        
+         <section>
+             <div class="container">
+                 <div class="form-box">
+                     <!--ส่งข้อมูลไปหลังบ้าน พอยืนยันเเล้วจะขึ้นหน้า sucess จะมีปุ่มลิ้งเข้าหน้า payment -->
+                     <form id="form" class="form" action="addreserve" method="post">
+                        {% csrf_token %}
+
+                         <h2 style="font: size 50px;">Buy Ticket</h2>
+
+
+                         <!--{% if messages %}
+                    {% for message in messages %}
+                        <h2 style="color: red; font: size 100px; font-weight: bold; ">{{message}}</h2>
+                    {% endfor %}
+                {% endif %}-->
+                         <!--เลือก Zone นั่ง-->
+                         <div class="form-control">
+                             <label for="zone">Zone</label>
+                             <select class="form-select" id="zone" name='zone'>
+                                 <!--<option selected>Zone</option>-->
+                                 <option value="A">Zone A</option>
+                                 <option value="B">Zone B</option>
+                                 <option value="C">Zone C</option>
+                             </select>
+                         </div>
+
+                         <!--เลือก Number ที่นั่ง-->
+                         <div class="form-control">
+                             <label for="seat">Seat</label>
+                             <input type="number" id="seat"  placeholder="" name='seat'
+                                    aria-label="seatnumber" aria-describedby="basic-addon1" value="1" min="1" max="20">
+                             <small>error message</small>
+                         </div>
+
+                         <!--กรอกชื่อ-นามสกุล-->
+                         <div class="form-control">
+                             <label for="full_name">Full name</label>
+                             <input type="text" id="full_name" class="form-control" placeholder="" name='full_name'
+                                    aria-label="Full_name" aria-describedby="basic-addon1">
+                             <small>error message</small>
+                         </div>
+                         <!--Submit-->
+                         <button type="submit">Payment</button>
+
+
+                     </form>
+                 </div>
+
+             </div>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+         </section>
+        
+    <script src="static/sitzone.js"></script>
+    
+</body>
+</html>

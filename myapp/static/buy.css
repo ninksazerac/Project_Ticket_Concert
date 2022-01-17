@@ -1,0 +1,245 @@
+
+/*เเถบบาร์*/
+.w3-top {
+    background: rgba(0,0,0,0.7);
+    font-family: Bahnschrift;
+    font-size: 20px;
+}
+.w3-top b{
+    font-size: 21px;
+}
+
+
+/*-----------------------------------------------ผัง Concert-----------------------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+
+.slides {
+    padding: 0;
+    width: 930px;
+    height: 520px;
+    display: block;
+    margin-top: 50px ;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 930px;
+    height: 520px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4
+
+
+/*-----------------------------------------------Zone Concert-----------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bahnschrift;
+}
+.container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 16rem;
+}
+html,body{
+    height: 100%;
+}
+body{
+    display: grid;
+    place-items: center;
+    
+}
+
+.card{
+    position: relative;
+    height: 470px;
+    width: 340px;
+    display: block;
+    background: rgb(224, 222, 238);
+    box-shadow: 0px 1px 2 px 3px rgba(0,0,0,0.15);
+    transition: 0.4s linear;
+    margin-top: 50px ;
+}
+.card:hover{
+    box-shadow: 0px 1px 35 px 3px rgba(0,0,0,0.3);
+}
+.card .image{
+    background: rgb(87, 88, 106);
+    height: 400px;
+    overflow: hidden;
+}
+.image img{
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+}
+.card.active .image img{
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.card .content{
+    position: absolute;
+    bottom: 0px;
+    background: rgb(27, 27, 27);
+    width: 100%;
+    text-align: center;
+    padding: 40px 30px
+}
+.content .title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+
+@media screen and (max-width: 1960px) {
+    .container {
+        padding-bottom: 5%
+    }
+}
+
+
+.button {
+    font-family: Bahnschrift;
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #22A7D3;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 18px;
+    width: 120px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover {
+        background-color: rgba(0,0,0,0.7);
+    }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

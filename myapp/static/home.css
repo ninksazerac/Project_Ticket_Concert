@@ -1,0 +1,78 @@
+.w3-top {
+    background: rgba(0,0,0,0.7);
+    font-family: Bahnschrift;
+    font-size: 20px;
+    
+}
+.w3-top b{
+    font-size: 21px;
+}
+.vid-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.banner-text {
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    left: 18%;
+}
+.banner-text h2{
+    font-family: Bahnschrift;
+    font-weight:bold;
+    color: #fff;
+    font-size:150px;
+    margin:0;
+}
+.banner-text h2 span {
+        color: deepskyblue;
+}
+.btn {
+    font-family: Bahnschrift;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 25px;
+    background: transparent;
+    border: 5px solid #fff;
+    color: deepskyblue;
+    text-align: center;
+    font-size: 28px;
+    padding: 18px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 5%
+}
+.btn span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    
+}
+.btn:hover{
+    background-color: deepskyblue;
+    color:aliceblue;
+}
+.btn:hover span {
+    padding-right: 19px;
+    
+}
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+    
+}

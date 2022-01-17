@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Concert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="static/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Navbar ข้างบน-->
+    <section>
+        <div class="w3-top">
+            <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+            <div class="w3-bar w3-wide w3-padding">
+                <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>
+
+                <div class="w3-right w3-hide-small">
+                    <a href="home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                    <a href="search" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Search</a>
+                    <a href="contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+        <!--Navbar ข้างบน-->
+        <h1 style="font-size:70px;">Payment</h1>
+        <div class="container">
+            <div class="form-box">
+                <h2>Bank xxxxx-xxxxx</h2>
+                {% if messages %}
+                {% for message in messages %}
+                <h3 style="color: red; font: size 100px; font-weight: bold; ">{{message}}</h3>
+                {% endfor %}
+                {% endif %}
+                <form id="form" class="form" action="addpayment" method="post">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <label for="">Zone</label>
+                        <select class="form-select" id="zone" name="zone">
+                            <!--<option selected>Zone</option>-->
+                            <option value="A">Zone A (sit)</option>
+                            <option value="B">Zone B (sit)</option>
+                            <option value="C">Zone C (sit)</option>
+                            <option value="standA">Zone A (stand)</option>
+                            <option value="standB">Zone B (stand)</option>
+                            <option value="standC">Zone C (stand)</option>
+                        </select>
+                        <i class="fa " aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="">Seat</label>
+                        <!--<h5 style ="display: inline;" >  (The standing zone does not need to be filled.) </h5>-->
+                        <input type="number" value="1" min="1" max="20" id="seat">
+                        <i class="fa " aria-hidden="true"></i>
+                        <h5 style="display: inline;">  * The standing zone does not need to be filled * </h5>
+                        <span></span>
+                    </div>
+
+
+
+                    <div class="input-field">
+                        <label for="">Full name</label>
+                        <input type="text" id="full_name" placeholder="Full name">
+                        <i class="fa " aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="">Email</label>
+                        <input type="text" id="email" placeholder="example@gmail.com">
+
+                        <i class="fa " aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="">Phone number</label>
+                        <input type="text" id="phone_number" placeholder="Phone number">
+                        <i class="fa " aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+
+                    <div class="input-field">
+
+                    </div>
+
+                </form>
+                <input type="submit" id="submit" value="Submit">
+                <div id="status"></div>
+                <h5>* Warning! : Please send us the payment slip after remittance *</h5>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="static/payment.js"></script>
+    
+</body>
+</html>
